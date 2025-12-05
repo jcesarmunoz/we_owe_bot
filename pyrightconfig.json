@@ -1,0 +1,15 @@
+{
+  "include": [
+    "app",
+    "*.py"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/node_modules"
+  ],
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none",
+  "pythonVersion": "3.10",
+  "typeCheckingMode": "basic"
+}
+
