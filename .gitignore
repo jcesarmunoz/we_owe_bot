@@ -55,3 +55,4 @@ Thumbs.db
 instance/
 .webassets-cache
 
+.vercel
