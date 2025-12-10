@@ -2,6 +2,22 @@
 
 # IMPORTANTE
 
+Por favor leer los comentarios de la actividad y lo siguiente:
+
+> Buena noche, Estimado Profesor Miguel
+>
+> Mi proyecto final de este curso de construcción de aplicaciones con IA fue un chatbot en telegram que permite registrar gastos, listarlos, y llevar un control de pago y deuda, el back fue desarrollado en python con flask y fue desplegado en vercel con la base de datos en postgres.
+>
+> Para utilizarlo es sencillo en telegram busque el bot llamado **MisGastosBot** le da unirse y posteriormente `/start`, ya con esto registra su usuario en base de datos, como primer chat puede agregar:
+>
+> *"debo a J Cesar Muñoz 15000 por cena"*
+>
+> Y creará el registro. Para listar coloca "pagar" y listara lo que debe y puede seleccionar que pagar según una lista desplegable que se ve debajo de la lista, por ultimo creara un comprobante de lo que pago, si desea saber a quién debe colocar algo referente a deudas o a quien debo ya que se utiliza gemini nuestra LLM interpretará lo que se escribe para que sea entendible por el back.
+>
+> Adjunto url del repositorio en github:
+> [jcesarmunoz/we_owe_bot](https://github.com/jcesarmunoz/we_owe_bot)
+
+
 ¡Bienvenido a tu asistente personal para gestionar gastos y deudas compartidas! Este bot te ayuda a llevar un registro fácil y rápido de quién debe a quién.
 
 ## 🚀 Comenzando
