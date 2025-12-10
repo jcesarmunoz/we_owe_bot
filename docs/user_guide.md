@@ -12,7 +12,7 @@ Por favor leer los comentarios de la actividad y lo siguiente:
 >
 > *"debo a J Cesar Muñoz 15000 por cena"*
 >
-> Y creará el registro. Para listar coloca "pagar" y listara lo que debe y puede seleccionar que pagar según una lista desplegable que se ve debajo de la lista, por ultimo creara un comprobante de lo que pago, si desea saber a quién debe colocar algo referente a deudas o a quien debo ya que se utiliza gemini nuestra LLM interpretará lo que se escribe para que sea entendible por el back.
+> Y creará el registro. Para listar coloca "pagar" y listara lo que debe y puede seleccionar que pagar según una lista desplegable que se ve debajo de la lista, por ultimo creara un comprobante de lo que pago, si desea a quien debe colocar algo referente a cobrar o a quien me debe ya que se utiliza gemini nuestra LLM interpretará lo que se escribe para que sea entendible por el back.
 >
 > Adjunto url del repositorio en github:
 > [jcesarmunoz/we_owe_bot](https://github.com/jcesarmunoz/we_owe_bot)
