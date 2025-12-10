@@ -17,14 +17,14 @@ Ya se ha creado el archivo `vercel.json` en la raíz del proyecto. Este archivo 
   "version": 2,
   "builds": [
     {
-      "src": "index.py",
+      "src": "app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "index.py"
+      "dest": "app.py"
     }
   ]
 }

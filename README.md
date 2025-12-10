@@ -54,7 +54,7 @@ Bot de Telegram inteligente que permite registrar gastos y deudas compartidas ut
 
 5. **Ejecutar la aplicación:**
    ```bash
-   python index.py
+   python app.py
    ```
 
 ## Guía de Uso Rápido 🚀
@@ -107,7 +107,7 @@ chatbot-gastos/
 │   ├── logger_config.py     # Configuración de logging estructurado
 │   └── config.py            # Configuración de entorno
 ├── docs/                    # Documentación del proyecto
-├── index.py                 # Punto de entrada (compatible con Vercel)
+├── app.py                   # Punto de entrada (compatible con Vercel)
 ├── vercel.json              # Configuración para Vercel
 ├── requirements.txt         # Dependencias
 └── README.md                # Este archivo
