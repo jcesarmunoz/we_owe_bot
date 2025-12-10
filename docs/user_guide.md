@@ -1,5 +1,7 @@
 # 🤖 Guía de Uso - Chatbot de Gastos
 
+# IMPORTANTE
+
 ¡Bienvenido a tu asistente personal para gestionar gastos y deudas compartidas! Este bot te ayuda a llevar un registro fácil y rápido de quién debe a quién.
 
 ## 🚀 Comenzando
