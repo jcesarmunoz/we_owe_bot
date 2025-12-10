@@ -107,7 +107,8 @@ chatbot-gastos/
 │   ├── logger_config.py     # Configuración de logging estructurado
 │   └── config.py            # Configuración de entorno
 ├── docs/                    # Documentación del proyecto
-├── app.py                   # Punto de entrada (compatible con Vercel)
+├── api/
+│   └── index.py             # Punto de entrada para Vercel
 ├── vercel.json              # Configuración para Vercel
 ├── requirements.txt         # Dependencias
 └── README.md                # Este archivo

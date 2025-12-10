@@ -10,21 +10,14 @@ Para desplegar este chatbot en Vercel, necesitas seguir estos pasos. Vercel es e
 ## 2. Configuración del Proyecto
 
 ### Archivo `vercel.json`
-Ya se ha creado el archivo `vercel.json` en la raíz del proyecto. Este archivo le dice a Vercel que use Python y redirija todo el tráfico a `run.py`.
+Ya se ha creado el archivo `vercel.json` con la configuración de rewrites para redirigir el tráfico a la API.
 
 ```json
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "app.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
+      "source": "/(.*)",
+      "destination": "/api/index.py"
     }
   ]
 }
