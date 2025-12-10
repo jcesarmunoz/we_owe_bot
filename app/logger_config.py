@@ -86,7 +86,7 @@ def setup_logging(log_level: str = "INFO", log_file: Optional[str] = None):
             file_handler.setLevel(getattr(logging, log_level.upper()))
             file_handler.setFormatter(formatter)
             root_logger.addHandler(file_handler)
-        except OSError:
+        except (OSError, IOError):
             # Si hay error de sistema de archivos (read-only), simplemente ignoramos el log a archivo
             # y confiamos en el log de consola (stdout) que Vercel captura nativamente.
             pass
