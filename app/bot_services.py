@@ -8,10 +8,41 @@ from app.config import Config
 from app import db
 from app.models import User, Expense
 from app.logger_config import log_operation, log_error, ErrorCodes
+import re
 
 logger = logging.getLogger(__name__)
 
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{Config.TELEGRAM_BOT_TOKEN}"
+
+
+def validate_message_content(text: str) -> bool:
+    """
+    Valida que el mensaje solo contenga caracteres permitidos para seguridad.
+    
+    Política de seguridad:
+    - Se rechazan inyecciones de código.
+    - Solo se permiten caracteres alfanuméricos y los especiales: $ , .
+    - Se permiten acentos y ñ para soporte de español.
+    
+    Args:
+        text: Texto a validar
+        
+    Returns:
+        True si el mensaje es válido, False si contiene caracteres prohibidos
+    """
+    if not text:
+        return True
+    
+    # Regex whitelist:
+    # a-zA-Z0-9 : Alphanuméricos
+    # \s : Espacios y saltos de línea
+    # \.,\$ : Caracteres especiales permitidos explícitamente
+    # áéíóúÁÉÍÓÚñÑ : Caracteres del español
+    # üÜ : Diéresis (opcional pero común)
+    pattern = r'^[a-zA-Z0-9\s\.,\$áéíóúÁÉÍÓÚñÑüÜ]*$'
+    
+    return bool(re.match(pattern, text))
+
 
 
 def send_message(chat_id: int, text: str, reply_markup: Optional[dict] = None) -> bool:

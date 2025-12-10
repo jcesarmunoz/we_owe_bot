@@ -22,7 +22,8 @@ from app.bot_services import (
     format_debts_to_collect,
     mark_expense_as_paid,
     answer_callback_query,
-    edit_message_text
+    edit_message_text,
+    validate_message_content
 )
 from app.ai_services import extract_expense_data
 from app.logger_config import (
@@ -211,6 +212,20 @@ def webhook():
 
         # Si no hay mensaje de texto, ignorar
         if not message_text:
+            return jsonify({'status': 'ok'}), 200
+
+        # Validar contenido del mensaje por seguridad
+        if not validate_message_content(message_text):
+            log_error(logger, ErrorCodes.ERR_INVALID_DATA, 
+                     "Mensaje rechazado por políticas de seguridad: caracteres no permitidos",
+                     telegram_id=telegram_id, user_id=user.id,
+                     data_dict={"message_preview": message_text[:20]})
+            send_message(
+                telegram_id,
+                "🚫 Tu mensaje no cumple con las politicas de seguridad"
+            )
+            log_response(logger, "OUT", "/webhook", 200, telegram_id=telegram_id, user_id=user.id,
+                        message="Mensaje rechazado por seguridad")
             return jsonify({'status': 'ok'}), 200
 
         # Extraer datos con Gemini
